@@ -2,80 +2,69 @@ const navMenu = document.getElementById('nav-menu')
 const navToggle = document.getElementById('nav-toggle')
 const navClose = document.getElementById('nav-close')
 
-if(navToggle){
+// OPEN THE MOBILE MENU
+if (navToggle) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu')
   })
 }
 
-if(navClose){
+// CLOSE THE MOBILE MENU 
+if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu')
   })
 }
 
-const navLink = document.querySelectorAll('.nav__link')
+
+// CLOSE MOBILE MENU
+const navLinks = document.querySelectorAll('.nav__link')
 
 const linkAction = () => {
   navMenu.classList.remove('show-menu')
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLinks.forEach(navLink => navLink.addEventListener('click', linkAction))
 
+
+// HEADER ONSCROLL SHADOW
 const shadowHeader = () => {
   const header = document.getElementById('header')
   this.scrollY >= 50 ? header.classList.add('shadow-header')
-  : header.classList.remove('shadow-header')
+    : header.classList.remove('shadow-header')
 }
 window.addEventListener('scroll', shadowHeader)
 
-const contactForm = document.getElementById('contact-form')
-const contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) => {
-e.preventDefault()
-
-  emailjs.sendForm('service_ddj0fsi', 'template_txficv9', '#contact-form', 'Dd2Ytu39LhkahjSlB')
-.then(() => {
-    contactMessage.textContent = 'Message sent successfully ✅'
-
-    setTimeout(() => {
-      contactMessage.textContent = ''
-    }, 5000)
-
-    contactForm.reset()
-}, () => {
-  contactMessage.textContent = 'Message not sent (service error) ❌'
-})
-}
-
-contactForm.addEventListener('submit', sendEmail)
-
+// BACK TO TOP BUTTON
 const scrollUp = () => {
   const scrollUp = document.getElementById('scroll-up')
-this.scrollY >= 350 ?scrollUp.classList.add('show-scroll')
-: scrollUp.classList.remove('show-scroll')
+  this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+    : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
+
+// NAVLINK SCROLL ACTIVE
 const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () => {
   const scrollDown = window.scrollY
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight,
-    sectionTop = current.offsetTop - 58,
-    sectionId = current.getAttribute('id'),
-    sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
- if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-  sectionClass.classList.add('active-link')
- } else{
-  sectionClass.classList.remove('active-link')
- }
- 
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute('id'),
+      sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+      sectionClass.classList.add('active-link')
+    } else {
+      sectionClass.classList.remove('active-link')
+    }
   })
 }
 window.addEventListener('scroll', scrollActive)
 
+
+// THEME TOGGLE
 const themeButton = document.getElementById('light-button'); // Select the theme button
 const darkTheme = 'dark-theme';
 const iconTheme = 'ri-sun-line';
@@ -89,7 +78,7 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'dark-t
 const toggleTheme = () => {
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
-  
+
   localStorage.setItem('selected-theme', getCurrentTheme());
   localStorage.setItem('selected-icon', getCurrentIcon());
 };
@@ -98,14 +87,17 @@ if (selectedTheme) {
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
   themeButton.classList[selectedIcon === 'dark-theme' ? 'add' : 'remove'](iconTheme);
 }
-
 themeButton.addEventListener('click', toggleTheme);
 
-       window.addEventListener('load', function () { 
-         const loaderContainer = document.querySelector('.loader-container'); 
-         loaderContainer.style.display = 'none'; 
-       });
 
+// LOADER
+window.addEventListener('load', function () {
+  const loaderContainer = document.querySelector('.loader-container');
+  loaderContainer.style.display = 'none';
+});
+
+
+// SCROLL REVEAL
 const sr = ScrollReveal({
   origin: 'top',
   distance: '60px',
@@ -114,6 +106,6 @@ const sr = ScrollReveal({
   reset: true
 })
 
-sr.reveal(`.home__perfil, .about__image, .contact__mail, .certs__card`, {origin: 'right'})
-sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data`, {origin: 'left'})
-sr.reveal(`.services__card, .projects__card`, {interval: 100})
+sr.reveal(`.home__perfil, .about__image, .contact__mail, .certs__card`, { origin: 'right' })
+sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data`, { origin: 'left' })
+sr.reveal(`.services__card, .projects__card`, { interval: 100 })
