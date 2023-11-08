@@ -277,7 +277,7 @@ img {
 @media screen and (max-width: 1150px) {
   .nav__menu {
     position: fixed;
-    top: calc(-100% - 3.8rem);
+    top: calc(-1000% - 3.8rem);
     left: 0;
     background-color: hsla(0, 0%, 0%, .75);
     width: 100%;
@@ -451,14 +451,13 @@ img {
 }
 
 .home__social {
-  height: max-content;
   position: absolute;
   left: -3rem;
   top: 2.5rem;
   bottom: 0;
   margin: auto 0;
   display: grid;
-  row-gap: 1rem;
+  gap: 1rem;
 }
 
 .home__social-link {
@@ -466,6 +465,8 @@ img {
   color: var(--white-color);
   font-size: 1.25rem;
   padding: 6px;
+  width: 32px;
+  height: 34px;
   display: grid;
   place-items: center;
   transition: background-color .3s;
@@ -1162,6 +1163,7 @@ img {
 
 .scrollup {
   width: 35px;
+  height: 35px;
   position: fixed;
   right: 1rem;
   bottom: -50%;
