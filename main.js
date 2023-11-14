@@ -90,6 +90,18 @@ if (selectedTheme) {
 themeButton.addEventListener('click', toggleTheme);
 
 
+document.addEventListener('mousemove', (e) => {
+  const cursor = document.querySelector('.cursor');
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY + window.scrollY}px`;
+});
+
+// Update the cursor position on scroll
+window.addEventListener('scroll', () => {
+  const cursor = document.querySelector('.cursor');
+  cursor.style.top = `${cursor.getBoundingClientRect().top + window.scrollY}px`;
+});
+
 // LOADER
 window.addEventListener('load', function () {
   const loaderContainer = document.querySelector('.loader-container');
