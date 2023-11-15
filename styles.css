@@ -75,14 +75,21 @@ body {
   border-radius: 50%;
   position: absolute;
   z-index: 99999999999;
-  pointer-events: none; 
+  pointer-events: none;
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   background-color: var(--body-color);
+  box-shadow: 0 5px 15px #f4f4f4;
 }
 
 .dark-theme .cursor {
   background-color: var(--title-color);
+}
+
+@media (max-width: 960px) {
+  .cursor {
+    display: none;
+  }
 }
 
 h1,
