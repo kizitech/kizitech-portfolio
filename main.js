@@ -90,23 +90,35 @@ if (selectedTheme) {
 themeButton.addEventListener('click', toggleTheme);
 
 
-document.addEventListener('mousemove', (e) => {
-  const cursor = document.querySelector('.cursor');
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY + window.scrollY}px`;
-});
+// document.addEventListener('mousemove', (e) => {
+//   const cursor = document.querySelector('.cursor');
+//   cursor.style.left = `${e.clientX}px`;
+//   cursor.style.top = `${e.clientY + window.scrollY}px`;
+// });
 
-// Update the cursor position on scroll
-window.addEventListener('scroll', () => {
-  const cursor = document.querySelector('.cursor');
-  cursor.style.top = `${cursor.getBoundingClientRect().top + window.scrollY}px`;
-});
+// // Update the cursor position on scroll
+// window.addEventListener('scroll', () => {
+//   const cursor = document.querySelector('.cursor');
+//   cursor.style.top = `${cursor.getBoundingClientRect().top + window.scrollY}px`;
+// });
+
 
 // LOADER
 window.addEventListener('load', function () {
+
+  const loaderTexts = document.querySelectorAll(".loader-text span");
+
+  const numLetters = loaderTexts.length;
+
+  loaderTexts.forEach(function (loaderText, i) {
+    const mappedIndex = i - numLetters / 2;
+    loaderText.style.animationDelay = mappedIndex * 0.25 + "s";
+  });
+
   const loaderContainer = document.querySelector('.loader-container');
   loaderContainer.style.display = 'none';
 });
+
 
 
 // SCROLL REVEAL
