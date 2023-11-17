@@ -105,16 +105,6 @@ themeButton.addEventListener('click', toggleTheme);
 
 // LOADER
 window.addEventListener('load', function () {
-
-  const loaderTexts = document.querySelectorAll(".loader-text span");
-
-  const numLetters = loaderTexts.length;
-
-  loaderTexts.forEach(function (loaderText, i) {
-    const mappedIndex = i - numLetters / 2;
-    loaderText.style.animationDelay = mappedIndex * 0.25 + "s";
-  });
-
   const loaderContainer = document.querySelector('.loader-container');
   loaderContainer.style.display = 'none';
 });
