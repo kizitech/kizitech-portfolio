@@ -90,19 +90,6 @@ if (selectedTheme) {
 themeButton.addEventListener('click', toggleTheme);
 
 
-// document.addEventListener('mousemove', (e) => {
-//   const cursor = document.querySelector('.cursor');
-//   cursor.style.left = `${e.clientX}px`;
-//   cursor.style.top = `${e.clientY + window.scrollY}px`;
-// });
-
-// // Update the cursor position on scroll
-// window.addEventListener('scroll', () => {
-//   const cursor = document.querySelector('.cursor');
-//   cursor.style.top = `${cursor.getBoundingClientRect().top + window.scrollY}px`;
-// });
-
-
 // LOADER
 window.addEventListener('load', function () {
   const loaderContainer = document.querySelector('.loader-container');
@@ -120,6 +107,6 @@ const sr = ScrollReveal({
   reset: true
 })
 
-sr.reveal(`.home__perfil, .about__image, .contact__mail, .certs__card`, { origin: 'right' })
+sr.reveal(`.home__perfil, .about__image, .contact__mail`, { origin: 'right' })
 sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data`, { origin: 'left' })
 sr.reveal(`.services__card, .projects__card`, { interval: 100 })

@@ -41,9 +41,6 @@
 
 <body>
 
-   <div class="cursor"></div>
-
-
    <header class="header" id="header">
       <nav class="nav container">
          <a href="#" class="nav__logo">
@@ -56,23 +53,23 @@
             <h3 class="nav__name">Kizito</h3>
             <ul class="nav__list">
                <li class="nav__item">
-                  <a href="#home" class="nav__link active-link">Home</a>
+                  <a href="#home" id="nav__link" class="nav__link active-link">Home</a>
                </li>
 
                <li class="nav__item">
-                  <a href="#about" class="nav__link">About Me</a>
+                  <a href="#about" id="nav__link" class="nav__link">About Me</a>
                </li>
 
                <li class="nav__item">
-                  <a href="#services" class="nav__link">Services</a>
+                  <a href="#services" id="nav__link" class="nav__link">Services</a>
                </li>
 
                <li class="nav__item">
-                  <a href="#projects" class="nav__link">Projects</a>
+                  <a href="#projects" id="nav__link" class="nav__link">Projects</a>
                </li>
 
                <li class="nav__item">
-                  <a href="#contact" class="nav__link nav__link-button">Contact Me</a>
+                  <a href="#contact" id="nav__link" class="nav__link nav__link-button">Contact Me</a>
                </li>
 
             </ul>
@@ -101,7 +98,8 @@
             <div class="home__perfil">
                <div class="home__info">
                   <div class="home__image">
-                     <img class="home__img" src="img/hero-image.png" alt="profile image" title="Tech Bro 👨🏽‍💻">
+                     <img class="home__img" src="img/hero-image.png" alt="profile image">
+                     <span class="home__tooltiptext">Tech Bro 👨🏽‍💻</span>
                      <div class="home__shadow"></div>
                      <img class="home__arrow" src="img/curved-arrow.svg" alt="arrow">
                      <img class="home__line" src="img/random-lines.svg" alt="lines">
@@ -543,25 +541,21 @@
 
    <script>
       (function () {
-         emailjs.init("Dd2Ytu39LhkahjSlB"); // EmailJS user ID
+         emailjs.init("Dd2Ytu39LhkahjSlB");
 
          document.getElementById("contact-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Get the form element
             const form = this;
 
-            // Send the email using EmailJS
             emailjs.sendForm("service_ddj0fsi", "template_txficv9", form)
                .then(function (response) {
-                  // Reset the form
+
                   form.reset();
 
                   if (response.status === 200) {
-                     // Display a success message to the user
                      document.getElementById("contact-message").innerHTML = "Message sent successfully! ✅";
                   } else {
-                     // Display an error message to the user
                      document.getElementById("contact-message").innerHTML = "Failed to send the message. Please try again. ⚠️";
                   }
                })
@@ -573,6 +567,9 @@
    </script>
 
    <script src="main.js"></script>
+   <script>
+
+   </script>
 
 </body>
 
