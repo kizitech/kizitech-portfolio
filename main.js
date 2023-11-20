@@ -92,9 +92,12 @@ themeButton.addEventListener('click', toggleTheme);
 
 // LOADER
 window.addEventListener('load', function () {
-  const loaderContainer = document.querySelector('.loader-container');
-  loaderContainer.style.display = 'none';
+  const loaderContainers = document.querySelectorAll('#loader-container');
+  loaderContainers.forEach(function (loaderContainer) {
+    loaderContainer.style.display = 'none';
+  });
 });
+
 
 
 
