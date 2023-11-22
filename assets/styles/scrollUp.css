@@ -1,0 +1,59 @@
+.scrollup {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  cursor: pointer;
+  display: inline-flex;
+  background-color: var(--black-color);
+  padding: 5px 6px;
+  z-index: var(--z-tooltip);
+  border: 2px solid hsla(0, 0%, 95%, 0.3);
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+
+  animation-name: wobble-vertical;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+@keyframes wobble-vertical {
+  16.65% {
+    transform: translateY(8px);
+  }
+  33.3% {
+    transform: translateY(-6px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

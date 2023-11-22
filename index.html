@@ -28,11 +28,12 @@
       content="Frontend Engineer and UI Designer. currently at Crown Branding Agency. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.">
    <meta name="twitter:image" content="blob:https://www.icloud.com/a2c4a485-4b35-40f9-bfab-225d51202bb0">
 
-   <link rel="stylesheet" href="styles.css">
-   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="/assets/styles/main.css">
+   <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
-   <script src="scrollreveal.min.js"></script>
+   <!-- EXTERNAL SCRIPTS -->
+   <script src="https://unpkg.com/scrollreveal"></script>
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
    <title>Ohani Kizito — Frontend Developer</title>
@@ -98,11 +99,11 @@
             <div class="home__perfil">
                <div class="home__info">
                   <div class="home__image">
-                     <img class="home__img" src="img/hero-image.png" alt="profile image">
+                     <img class="home__img" src="/assets/images/hero-image.png" alt="profile image">
                      <span class="home__tooltiptext">Tech Bro 👨🏽‍💻</span>
                      <div class="home__shadow"></div>
-                     <img class="home__arrow" src="img/curved-arrow.svg" alt="arrow">
-                     <img class="home__line" src="img/random-lines.svg" alt="lines">
+                     <img class="home__arrow" src="/assets/images/curved-arrow.svg" alt="arrow">
+                     <img class="home__line" src="/assets/images/random-lines.svg" alt="lines">
 
                      <div class="geometric-box"></div>
                   </div>
@@ -144,10 +145,10 @@
             </h2>
             <div class="about__perfil">
                <div class="about__image">
-                  <img class="about__img" src="/img/about-me.png.jpeg" alt="photo">
+                  <img class="about__img" src="/assets/images/about-me.png.jpeg" alt="photo">
                   <div class="about__shadow"></div>
                   <div class="geometric-box"></div>
-                  <img class="about__line" src="img/random-lines.svg" alt="lines">
+                  <img class="about__line" src="/assets/images/random-lines.svg" alt="lines">
                   <div class="about__box"></div>
                </div>
             </div>
@@ -245,7 +246,7 @@
 
             <article class="projects__card">
                <div class="projects__image">
-                  <img class="projects__img" src="img/splash.png" alt="rune" title="Rune Dessets">
+                  <img class="projects__img" src="/assets/images/splash.png" alt="rune" title="Rune Dessets">
                   <a class="projects__button button" href="https://splash-nu.vercel.app/" target="_blank">
                      <i class="ri-arrow-right-up-line"></i>
                   </a>
@@ -274,7 +275,7 @@
 
             <article class="projects__card">
                <div class="projects__image">
-                  <img class="projects__img" src="img/runedesserts.png" alt="rune" title="Rune Dessets">
+                  <img class="projects__img" src="/assets/images/runedesserts.png" alt="rune" title="Rune Dessets">
                   <a class="projects__button button" href="https://rune-desserts.vercel.app/" target="_blank">
                      <i class="ri-arrow-right-up-line"></i>
                   </a>
@@ -302,7 +303,7 @@
 
             <article class="projects__card">
                <div class="projects__image">
-                  <img class="projects__img" src="/img/hoobank.png" alt="hoobank" title="HooBank">
+                  <img class="projects__img" src="/assets/images/hoobank.png" alt="hoobank" title="HooBank">
                   <a class="projects__button button" href="https://hoobankdouble.vercel.app/" target="_blank">
                      <i class="ri-arrow-right-up-line"></i>
                   </a>
@@ -331,7 +332,7 @@
 
             <article class="projects__card">
                <div class="projects__image">
-                  <img class="projects__img" src="/img/unSplash.png" alt="unsplash" title="unSplash">
+                  <img class="projects__img" src="/assets/images/unSplash.png" alt="unsplash" title="unSplash">
                   <a class="projects__button button" href="https://unsplashfashion.vercel.app/" target="_blank">
                      <i class="ri-arrow-right-up-line"></i>
                   </a>
@@ -390,7 +391,7 @@
 
             <article class="projects__card">
                <div class="projects__image">
-                  <img class="projects__img" src="/img/coop.png" alt="image">
+                  <img class="projects__img" src="/assets/images/coop.png" alt="image">
                   <!-- <a class="projects__button button" href="#" target="_blank">
                      <i class="ri-arrow-right-up-line"></i>
                   </a> -->
@@ -473,7 +474,7 @@
                </form>
             </div>
             <div class="contact__social">
-               <img class="contact__social-arrow" src="img/curved-arrow.svg" alt="arrow">
+               <img class="contact__social-arrow" src="/assets/images/curved-arrow.svg" alt="arrow">
                <div class="contact__social-data">
                   <p class="contact__social-description-1">
                      Do not want to send emails
@@ -556,37 +557,12 @@
       </div>
    </div>
 
-   <script>
-      (function () {
-         emailjs.init("Dd2Ytu39LhkahjSlB");
-
-         document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const form = this;
-
-            emailjs.sendForm("service_ddj0fsi", "template_txficv9", form)
-               .then(function (response) {
-
-                  form.reset();
-
-                  if (response.status === 200) {
-                     document.getElementById("contact-message").innerHTML = "Message sent successfully! ✅";
-                  } else {
-                     document.getElementById("contact-message").innerHTML = "Failed to send the message. Please try again. ⚠️";
-                  }
-               })
-               .catch(function (error) {
-                  console.error("Error sending email: ", error);
-               });
-         });
-      })();
-   </script>
-
-   <script src="main.js"></script>
-   <script>
-
-   </script>
+   <script src="/assets/scripts/backToTop.js"></script>
+   <script src="/assets/scripts/themeChanger.js"></script>
+   <script src="/assets/scripts/loader.js"></script>
+   <script src="/assets/scripts/scrollReveal.js"></script>
+   <script src="/assets/scripts/email.js"></script>
+   <script src="/assets/scripts/header.js"></script>
 
 </body>
 

@@ -1,0 +1,65 @@
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dark-theme .shadow-header {
+  box-shadow: 0 1px 12px hsla(0, 0%, 0%, 0.6);
+}
+
+.dark-theme .section__title-1::after,
+.dark-theme .section__title-2::after {
+  background-color: hsl(86, 12%, 49%, 0.2);
+}
+
+.dark-theme .home__arrow,
+.home__line,
+.about__line {
+  filter: none;
+}
+
+.dark-theme .home__line {
+  filter: none;
+}
+
+.dark-theme .about__line {
+  filter: none;
+}
+
+.dark-theme .button__ghost {
+  color: var(--white-color);
+}
+
+.dark-theme .services__icon i {
+  color: var(--white-color);
+}
+
+.dark-theme:is(.contact__mail, .contact__input, .contact__label) {
+  background-color: var(--container-color);
+}
+
+.dark-theme .projects__card:hover {
+  background-color: var(--body-color);
+}
+
+.dark-theme .contact__social-arrow {
+  filter: none;
+}
+
+.dark-theme .footer {
+  background-color: hsl(0, 0%, 4%);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 30%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 40%);
+}
