@@ -4,8 +4,8 @@
 <head>
 
    <meta charset="UTF-8">
-   <meta property="og:url" content="https://www.kizitech.vercel.app/">
-   <meta property="og:site_name" content="www.kizitech.vercel.app">
+   <meta property="og:url" content="https://kizitech.vercel.app/">
+   <meta property="og:site_name" content="https://kizitech.vercel.app">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description"
       content="Ohani Kizito is a skilled frontend developer and UI designer based in Delta, Nigeria. Specializing in creating beautiful interfaces and experiences.">
@@ -16,7 +16,7 @@
    <meta property="og:image" content="blob:https://www.icloud.com/a2c4a485-4b35-40f9-bfab-225d51202bb0">
    <meta property="og:image:width" content="1200">
    <meta property="og:image:height" content="630">
-   <meta property="og:image:alt" content="Ohani Kizito — Frontend Engineer">
+   <meta property="og:image:alt" content="Ohani Kizito — Frontend Engineer, Design Disciple, Frontend Maverick, Code Composer, Frontend Fusionist">
    <meta property="og:type" content="website">
 
    <!-- TWITTER CARD INFORMATION -->
@@ -24,10 +24,10 @@
    <meta name="twitter:creator" content="Ohani_Kizito">
    <meta name="twitter:creator:id" content="1243720976552144897">
    <meta name="twitter:title" content="Ohani Kizito — Frontend Engineer">
-   <meta name="twitter:description"
-      content="Frontend Engineer and UI Designer. currently at Crown Branding Agency. Focused on interfaces and experiences, working remotely from Lagos, Nigeria.">
+   <meta name="twitter:description" content="Frontend Engineer and UI Designer. Focused on interfaces and experiences.">
    <meta name="twitter:image" content="blob:https://www.icloud.com/a2c4a485-4b35-40f9-bfab-225d51202bb0">
 
+   <!-- STYLINGS LINKS -->
    <link rel="stylesheet" href="/assets/styles/main.css">
    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
@@ -541,9 +541,22 @@
       </svg>
    </a>
 
-   <div class="loader-container">
-      <div class="loader"></div>
-      <p>Loading...</p>
+   <div id="loader-container">
+      <div id="container">
+         <span id="text1"></span>
+         <span id="text2"></span>
+      </div>
+
+      <svg id="filters">
+         <defs>
+            <filter id="threshold">
+               <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+         									0 1 0 0 0
+         									0 0 1 0 0
+         									0 0 0 255 -140" />
+            </filter>
+         </defs>
+      </svg>
    </div>
 
    <script src="/assets/scripts/backToTop.js"></script>
