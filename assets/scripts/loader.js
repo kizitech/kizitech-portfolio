@@ -1,4 +1,5 @@
-const loaderContainer = document.querySelector('#container');
+const loader = document.querySelector('#container');
+const loaderContainer = document.querySelector('#loader-container');
 
 const elts = {
     text1: document.getElementById("text1"),
