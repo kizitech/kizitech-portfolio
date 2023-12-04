@@ -7,7 +7,7 @@
 
 .marquee {
   font-weight: 800;
-  font-size: 7vw;
+  font-size: 8vw;
   color: var(----text-color);
   letter-spacing: 0.02em;
   overflow: hidden;
