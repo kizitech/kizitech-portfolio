@@ -1,5 +1,5 @@
 :root {
-  --marquee-speed: 100s;
+  --marquee-speed: 200s;
   --marquee-hover-offset: -50px;
   --marquee-hover-transition-speed: 0.7s;
   --marquee-fade-edges: 30%;
